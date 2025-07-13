@@ -1,0 +1,8 @@
+fastapi 
+uvicorn 
+openai 
+librosa 
+pydub 
+numpy 
+pandas 
+python-multipart 
