@@ -1,4 +1,8 @@
-__pycache__/ 
-*.mp3 
-*.pyc 
-*.db 
+.env
+backend/.env
+__pycache__/
+*.pyc
+*.db
+node_modules/
+dist/
+.venv/

@@ -1,0 +1,7 @@
+{
+  "app.title": "PyroMind",
+  "sidecar.checking": "Checking sidecar...",
+  "sidecar.ok": "Sidecar OK",
+  "sidecar.unhealthy": "Sidecar Unhealthy",
+  "sidecar.unreachable": "Sidecar Unreachable"
+}
