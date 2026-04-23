@@ -3,6 +3,7 @@ mod commands;
 
 use commands::get_sidecar_port;
 use sidecar::start_sidecar;
+use tauri::Manager;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {

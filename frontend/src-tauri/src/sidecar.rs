@@ -22,8 +22,26 @@ fn allocate_sidecar_port() -> Result<u16, io::Error> {
     Ok(port)
 }
 
-fn backend_dir() -> PathBuf {
-    PathBuf::from("../backend")
+fn backend_dir() -> Result<PathBuf, io::Error> {
+    let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    // Crate lives at frontend/src-tauri; Python backend is repo-root/backend.
+    let candidates = [
+        manifest_dir.join("../../backend"),
+        manifest_dir.join("../backend"),
+        PathBuf::from("../../backend"),
+        PathBuf::from("../backend"),
+    ];
+
+    for candidate in candidates {
+        if candidate.exists() {
+            return Ok(candidate);
+        }
+    }
+
+    Err(io::Error::new(
+        io::ErrorKind::NotFound,
+        "Could not locate backend directory for sidecar",
+    ))
 }
 
 fn venv_python_path(backend: &PathBuf) -> PathBuf {
@@ -37,7 +55,7 @@ fn venv_python_path(backend: &PathBuf) -> PathBuf {
 /// Spawn uvicorn with `PYROMIND_SIDECAR_PORT` set; returns the port and child handle.
 pub fn start_sidecar() -> Result<SidecarRuntime, io::Error> {
     let port = allocate_sidecar_port()?;
-    let backend = backend_dir();
+    let backend = backend_dir()?;
     let venv_python = venv_python_path(&backend);
 
     let mut command = if venv_python.exists() {

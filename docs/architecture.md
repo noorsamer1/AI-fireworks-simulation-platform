@@ -250,6 +250,19 @@ No LLM sees this step. Safety is too high-stakes for stochastic output.
 
 ## 9. Physical deployment on user's machine
 
+**Repository layout (source tree):** the Tauri Rust shell lives under `frontend/` next to the Vite app; the Python sidecar resolves `backend/` relative to that crate.
+
+```
+pyromind/
+├── frontend/
+│   ├── src/
+│   ├── src-tauri/        ← Tauri shell lives here
+│   └── package.json
+├── backend/
+│   └── pyromind/
+└── docs/
+```
+
 ```mermaid
 flowchart TB
     subgraph UserMachine["User's Desktop (Mac or Windows)"]
