@@ -34,15 +34,6 @@ class UserConstraints(BaseModel):
     random_seed: int = 42
 
 
-class ShowBlueprint(BaseModel):
-    """High-level creative show document (LangGraph / planning)."""
-
-    project_id: str
-    title: str
-    song_path: str
-    constraints: UserConstraints
-
-
 class ShowBase(BaseModel):
     """Shared persisted-show fields."""
 
