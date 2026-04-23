@@ -19,10 +19,18 @@ def client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Generator[TestCli
     """Isolated SQLite file + dummy OpenRouter key for FastAPI tests."""
     from pyromind.config import Settings
 
+    import pyromind.catalog.embedder as emb_mod
+
+    from tests.graph_test_utils import patch_fast_audio_analyst, patch_stub_planning_agents
+
+    monkeypatch.setattr(emb_mod, "build_embeddings_if_empty", lambda _c: None)
+    patch_fast_audio_analyst(monkeypatch)
+    patch_stub_planning_agents(monkeypatch)
     monkeypatch.setattr(
         "pyromind.config.settings",
         Settings(
             db_path=str(tmp_path / "test.sqlite"),
+            projects_dir=str(tmp_path / "projects"),
             llm_provider="openrouter",
             openrouter_api_key="sk-test-dummy",
         ),

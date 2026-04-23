@@ -1,0 +1,457 @@
+[
+  {
+    "audio_summary": {
+      "tempo_bpm": 72,
+      "sections": 3,
+      "mood": "intimate",
+      "key": "F major"
+    },
+    "user_constraints": {
+      "budget_tier": "small",
+      "mood_tags": [
+        "romantic"
+      ],
+      "finale_style": "cascade"
+    },
+    "show_plan": {
+      "title": "Ballad \u2014 River of Light",
+      "concept": "Slow reveal; minimal density; emotional patience.",
+      "arc": [
+        {
+          "audio_section_index": 0,
+          "intent": "Ballad section 0",
+          "intensity": 0.4,
+          "density_per_min": 10,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "candle"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 1,
+          "intent": "Ballad section 1",
+          "intensity": 0.5,
+          "density_per_min": 15,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "comet"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 2,
+          "intent": "Ballad section 2",
+          "intensity": 0.6000000000000001,
+          "density_per_min": 20,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "shell"
+          ],
+          "avoid": []
+        }
+      ],
+      "palette": {
+        "primary": [
+          "#d4af37"
+        ],
+        "secondary": [
+          "#1a1a2e"
+        ],
+        "accent": [
+          "#e94560"
+        ],
+        "rationale": "Contrast warm metallics against deep sky."
+      },
+      "motifs": [
+        {
+          "id": "pulse",
+          "description": "Rhythmic shell pairs on downbeats.",
+          "rule": {
+            "type": "downbeat",
+            "n": 1
+          }
+        }
+      ],
+      "finale_concept": "Tight cascade into a single vertical gold column.",
+      "budget_distribution": {
+        "0": 0.3333,
+        "1": 0.3333,
+        "2": 0.3334
+      }
+    }
+  },
+  {
+    "audio_summary": {
+      "tempo_bpm": 128,
+      "sections": 3,
+      "mood": "driving",
+      "key": "A minor"
+    },
+    "user_constraints": {
+      "budget_tier": "large",
+      "mood_tags": [
+        "edm"
+      ],
+      "finale_style": "wall"
+    },
+    "show_plan": {
+      "title": "EDM \u2014 Voltage Rise",
+      "concept": "Build tension through monochrome blues then chromatic drop.",
+      "arc": [
+        {
+          "audio_section_index": 0,
+          "intent": "EDM section 0",
+          "intensity": 0.4,
+          "density_per_min": 10,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "mine"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 1,
+          "intent": "EDM section 1",
+          "intensity": 0.5,
+          "density_per_min": 15,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "cake"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 2,
+          "intent": "EDM section 2",
+          "intensity": 0.6000000000000001,
+          "density_per_min": 20,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "shell"
+          ],
+          "avoid": []
+        }
+      ],
+      "palette": {
+        "primary": [
+          "#d4af37"
+        ],
+        "secondary": [
+          "#1a1a2e"
+        ],
+        "accent": [
+          "#e94560"
+        ],
+        "rationale": "Contrast warm metallics against deep sky."
+      },
+      "motifs": [
+        {
+          "id": "pulse",
+          "description": "Rhythmic shell pairs on downbeats.",
+          "rule": {
+            "type": "downbeat",
+            "n": 1
+          }
+        }
+      ],
+      "finale_concept": "Tight cascade into a single vertical gold column.",
+      "budget_distribution": {
+        "0": 0.3333,
+        "1": 0.3333,
+        "2": 0.3334
+      }
+    }
+  },
+  {
+    "audio_summary": {
+      "tempo_bpm": 105,
+      "sections": 3,
+      "mood": "festive",
+      "key": "D hijaz"
+    },
+    "user_constraints": {
+      "budget_tier": "medium",
+      "mood_tags": [
+        "arabic_pop"
+      ],
+      "finale_style": "crescendo"
+    },
+    "show_plan": {
+      "title": "Arabic Pop \u2014 Desert Bloom",
+      "concept": "Ornate comet motifs with gold dominance.",
+      "arc": [
+        {
+          "audio_section_index": 0,
+          "intent": "Arabic section 0",
+          "intensity": 0.4,
+          "density_per_min": 10,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "comet"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 1,
+          "intent": "Arabic section 1",
+          "intensity": 0.5,
+          "density_per_min": 15,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "shell"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 2,
+          "intent": "Arabic section 2",
+          "intensity": 0.6000000000000001,
+          "density_per_min": 20,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "candle"
+          ],
+          "avoid": []
+        }
+      ],
+      "palette": {
+        "primary": [
+          "#d4af37"
+        ],
+        "secondary": [
+          "#1a1a2e"
+        ],
+        "accent": [
+          "#e94560"
+        ],
+        "rationale": "Contrast warm metallics against deep sky."
+      },
+      "motifs": [
+        {
+          "id": "pulse",
+          "description": "Rhythmic shell pairs on downbeats.",
+          "rule": {
+            "type": "downbeat",
+            "n": 1
+          }
+        }
+      ],
+      "finale_concept": "Tight cascade into a single vertical gold column.",
+      "budget_distribution": {
+        "0": 0.3333,
+        "1": 0.3333,
+        "2": 0.3334
+      }
+    }
+  },
+  {
+    "audio_summary": {
+      "tempo_bpm": 60,
+      "sections": 3,
+      "mood": "cinematic",
+      "key": "C minor"
+    },
+    "user_constraints": {
+      "budget_tier": "mega",
+      "mood_tags": [
+        "orchestral"
+      ],
+      "finale_style": "wall"
+    },
+    "show_plan": {
+      "title": "Orchestral \u2014 Silver Screen",
+      "concept": "Long arcs; sparse early; massive brass-colored finale.",
+      "arc": [
+        {
+          "audio_section_index": 0,
+          "intent": "Cinematic section 0",
+          "intensity": 0.4,
+          "density_per_min": 10,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "shell"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 1,
+          "intent": "Cinematic section 1",
+          "intensity": 0.5,
+          "density_per_min": 15,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "ground"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 2,
+          "intent": "Cinematic section 2",
+          "intensity": 0.6000000000000001,
+          "density_per_min": 20,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "cake"
+          ],
+          "avoid": []
+        }
+      ],
+      "palette": {
+        "primary": [
+          "#d4af37"
+        ],
+        "secondary": [
+          "#1a1a2e"
+        ],
+        "accent": [
+          "#e94560"
+        ],
+        "rationale": "Contrast warm metallics against deep sky."
+      },
+      "motifs": [
+        {
+          "id": "pulse",
+          "description": "Rhythmic shell pairs on downbeats.",
+          "rule": {
+            "type": "downbeat",
+            "n": 1
+          }
+        }
+      ],
+      "finale_concept": "Tight cascade into a single vertical gold column.",
+      "budget_distribution": {
+        "0": 0.3333,
+        "1": 0.3333,
+        "2": 0.3334
+      }
+    }
+  },
+  {
+    "audio_summary": {
+      "tempo_bpm": 118,
+      "sections": 3,
+      "mood": "upbeat",
+      "key": "G major"
+    },
+    "user_constraints": {
+      "budget_tier": "medium",
+      "mood_tags": [
+        "pop"
+      ],
+      "finale_style": "cascade"
+    },
+    "show_plan": {
+      "title": "Pop \u2014 Confetti Sky",
+      "concept": "Bright palette; playful comets; crowd-height emphasis.",
+      "arc": [
+        {
+          "audio_section_index": 0,
+          "intent": "Pop section 0",
+          "intensity": 0.4,
+          "density_per_min": 10,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "comet"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 1,
+          "intent": "Pop section 1",
+          "intensity": 0.5,
+          "density_per_min": 15,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "shell"
+          ],
+          "avoid": []
+        },
+        {
+          "audio_section_index": 2,
+          "intent": "Pop section 2",
+          "intensity": 0.6000000000000001,
+          "density_per_min": 20,
+          "dominant_colors": [
+            "gold",
+            "silver"
+          ],
+          "preferred_effect_families": [
+            "mine"
+          ],
+          "avoid": []
+        }
+      ],
+      "palette": {
+        "primary": [
+          "#d4af37"
+        ],
+        "secondary": [
+          "#1a1a2e"
+        ],
+        "accent": [
+          "#e94560"
+        ],
+        "rationale": "Contrast warm metallics against deep sky."
+      },
+      "motifs": [
+        {
+          "id": "pulse",
+          "description": "Rhythmic shell pairs on downbeats.",
+          "rule": {
+            "type": "downbeat",
+            "n": 1
+          }
+        }
+      ],
+      "finale_concept": "Tight cascade into a single vertical gold column.",
+      "budget_distribution": {
+        "0": 0.3333,
+        "1": 0.3333,
+        "2": 0.3334
+      }
+    }
+  }
+]

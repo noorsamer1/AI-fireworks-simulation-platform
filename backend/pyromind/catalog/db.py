@@ -7,6 +7,8 @@ import sqlite3
 from pathlib import Path
 from typing import Any
 
+import sqlite_vec
+
 import pyromind.config as _pm_config
 
 _MIGRATIONS_DIR = Path(__file__).resolve().parent / "migrations"
@@ -63,15 +65,6 @@ CREATE TABLE IF NOT EXISTS shows (
 CREATE INDEX IF NOT EXISTS ix_shows_project ON shows(project_id);
 CREATE INDEX IF NOT EXISTS ix_shows_state ON shows(state);
 
-CREATE TABLE IF NOT EXISTS checkpoints (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    show_id TEXT NOT NULL REFERENCES shows(id) ON DELETE CASCADE,
-    agent_name TEXT NOT NULL,
-    state_json TEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-CREATE INDEX IF NOT EXISTS ix_checkpoints_show ON checkpoints(show_id);
-
 CREATE VIRTUAL TABLE IF NOT EXISTS effects_fts USING fts5(
     name,
     description,
@@ -82,29 +75,16 @@ CREATE VIRTUAL TABLE IF NOT EXISTS effects_fts USING fts5(
 """
 
 
-def _maybe_load_sqlite_vec(conn: sqlite3.Connection) -> None:
-    """Attempt to load the sqlite-vec extension when the build supports it."""
-    try:
-        conn.enable_load_extension(True)
-    except AttributeError:
-        return
-    for ext in ("vec0", "sqlite_vec", "sqlite-vec"):
-        try:
-            conn.load_extension(ext)
-            return
-        except sqlite3.OperationalError:
-            continue
-
-
 def get_connection() -> sqlite3.Connection:
-    """Open a SQLite connection with WAL, foreign keys, and optional sqlite-vec."""
+    """Open a SQLite connection with WAL, foreign keys, and sqlite-vec."""
     path = _pm_config.settings.sqlite_path()
     path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(path, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA foreign_keys=ON")
-    _maybe_load_sqlite_vec(conn)
+    conn.enable_load_extension(True)
+    sqlite_vec.load(conn)
     return conn
 
 

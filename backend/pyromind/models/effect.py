@@ -49,21 +49,6 @@ class Effect(EffectBase):
     importer_version: str
 
 
-class RankedEffect(BaseModel):
-    """Ranking record for effect retrieval (agent / search output)."""
-
-    effect_id: str
-    score: float = Field(ge=0, le=1)
-    why: str
-
-
-class EffectCandidates(BaseModel):
-    """Effect retrieval output grouped by section and motif."""
-
-    per_section: dict[int, list[RankedEffect]] = Field(default_factory=dict)
-    per_motif: dict[str, list[RankedEffect]] = Field(default_factory=dict)
-
-
 class EffectsListResponse(BaseModel):
     """Paginated effects listing."""
 

@@ -8,6 +8,8 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 
 from pyromind.api.deps import db_conn
 from pyromind.catalog import repositories as repos
+from pyromind.catalog.embedder import embed_texts
+from pyromind.catalog import vectors as vec_mod
 from pyromind.models.effect import (
     Effect,
     EffectCreate,
@@ -64,10 +66,27 @@ async def semantic_search_effects(
     body: SemanticSearchRequest,
     conn: sqlite3.Connection = Depends(db_conn),
 ) -> list[SemanticSearchHit]:
-    """Rank effects for a natural-language query using FTS5 (BM25).
-
-    TODO: replace with vec search in Phase 4.
-    """
-    rows = repos.search_effects_semantic_fts(conn, body.query, body.limit)
+    """Rank effects: sqlite-vec cosine when embeddings exist, else FTS5."""
+    cnt_row = conn.execute("SELECT COUNT(*) AS c FROM effects_vec").fetchone()
+    vec_count = int(cnt_row["c"]) if cnt_row else 0
+    if vec_count == 0:
+        rows = repos.search_effects_semantic_fts(conn, body.query, body.limit)
+        conn.commit()
+        return [SemanticSearchHit(effect=e, score=s, why=w) for e, s, w in rows]
+    qvec = embed_texts([body.query])[0]
+    hits = vec_mod.search_similar(conn, qvec, limit=body.limit)
+    out: list[SemanticSearchHit] = []
+    for eid, dist in hits:
+        eff = repos.get_effect_by_id(conn, eid)
+        if eff is None:
+            continue
+        score = float(max(0.0, 1.0 - dist))
+        out.append(
+            SemanticSearchHit(
+                effect=eff,
+                score=score,
+                why=f"sqlite-vec cosine distance={dist:.4f}",
+            )
+        )
     conn.commit()
-    return [SemanticSearchHit(effect=e, score=s, why=w) for e, s, w in rows]
+    return out

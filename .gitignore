@@ -1,5 +1,11 @@
 .env
 backend/.env
+# Local dev catalog (never commit)
+pyromind.sqlite
+pyromind.sqlite-shm
+pyromind.sqlite-wal
+backend/.cache/
+backend/phase2_gate.wav
 __pycache__/
 *.pyc
 *.db

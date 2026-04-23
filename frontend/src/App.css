@@ -30,6 +30,20 @@
   text-align: center;
 }
 
+.workspace-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.workspace-project-id {
+  font-size: 0.85rem;
+  color: #555;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

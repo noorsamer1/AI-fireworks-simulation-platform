@@ -1,12 +1,11 @@
 """Pydantic contracts for PyroMind."""
 
 from pyromind.models.audio import AudioAnalysis, Section
+from pyromind.models.candidates import EffectCandidates, RankedEffect
 from pyromind.models.effect import (
     Effect,
-    EffectCandidates,
     EffectCreate,
     EffectsListResponse,
-    RankedEffect,
     SemanticSearchHit,
     SemanticSearchRequest,
 )
@@ -18,17 +17,14 @@ from pyromind.models.events import (
     ShowStateChanged,
     WSEvent,
 )
+from pyromind.models.plan import Motif, Palette, PlanSection, ShowPlan
 from pyromind.models.project import Project, ProjectCreate, ProjectDetail
 from pyromind.models.show import (
     FiringScript,
     FiringSite,
-    Motif,
-    PlanSection,
     SafetyReport,
     Show,
     ShowCreate,
-    ShowPlan,
-    ShowState,
     ShowSummary,
     SimulationArtifact,
     UserConstraints,
@@ -47,6 +43,7 @@ __all__ = [
     "FiringScript",
     "FiringSite",
     "Motif",
+    "Palette",
     "PlanSection",
     "Project",
     "ProjectCreate",
@@ -60,7 +57,6 @@ __all__ = [
     "ShowCreate",
     "ShowPlan",
     "ShowSummary",
-    "ShowState",
     "ShowStateChanged",
     "SimulationArtifact",
     "UserConstraints",

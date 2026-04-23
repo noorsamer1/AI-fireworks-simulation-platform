@@ -13,8 +13,10 @@ let locale: Locale = "en";
 /** Set active UI locale (English or Arabic). */
 export function setLocale(next: Locale): void {
   locale = next;
-  document.documentElement.lang = next;
-  document.documentElement.dir = next === "ar" ? "rtl" : "ltr";
+  if (typeof document !== "undefined") {
+    document.documentElement.lang = next;
+    document.documentElement.dir = next === "ar" ? "rtl" : "ltr";
+  }
 }
 
 /** Resolve a message key for the active locale. */

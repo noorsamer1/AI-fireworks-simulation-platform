@@ -1,0 +1,60 @@
+.wrap {
+  max-width: 28rem;
+  margin: 1rem auto;
+  text-align: start;
+}
+
+.zone {
+  border: 2px dashed #9ca3af;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  background: #fafafa;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.zone:hover,
+.zoneDrag {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0;
+}
+
+.progress {
+  margin-top: 0.5rem;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.1s linear;
+}
+
+.err {
+  margin-top: 0.5rem;
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+.pickBtn {
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.hiddenInput {
+  display: none;
+}

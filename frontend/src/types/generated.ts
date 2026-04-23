@@ -60,6 +60,78 @@ export interface Effect {
   importer_version: string;
 }
 
+export interface Section {
+  start_s: number;
+  end_s: number;
+  label: "intro" | "verse" | "chorus" | "bridge" | "drop" | "breakdown" | "outro" | "instrumental";
+  energy: number;
+  novelty: number;
+}
+
+export interface AudioAnalysis {
+  duration_s: number;
+  sample_rate: number;
+  tempo_bpm: number;
+  tempo_curve?: unknown[][];
+  beats_s?: number[];
+  downbeats_s?: number[];
+  onsets_s?: number[];
+  key?: string;
+  mode?: "major" | "minor";
+  loudness_curve?: number[];
+  spectral_centroid_curve?: number[];
+  stems?: Record<string, unknown>;
+  sections?: Section[];
+  mood_vector?: number[];
+  mert_embedding?: number[];
+  clap_embeddings?: unknown[][];
+}
+
+export interface Palette {
+  primary?: string[];
+  secondary?: string[];
+  accent?: string[];
+  rationale?: string;
+}
+
+export interface PlanSection {
+  audio_section_index: number;
+  intent: string;
+  intensity: number;
+  density_per_min: number;
+  dominant_colors?: string[];
+  preferred_effect_families?: string[];
+  avoid?: string[];
+}
+
+export interface Motif {
+  id: string;
+  description: string;
+  rule?: Record<string, unknown>;
+}
+
+export interface ShowPlan {
+  title: string;
+  concept: string;
+  arc?: PlanSection[];
+  palette: Palette;
+  motifs?: Motif[];
+  finale_concept: string;
+  budget_distribution?: Record<string, unknown>;
+}
+
+export interface RankedEffect {
+  effect_id: string;
+  score: number;
+  why: string;
+  effect: Effect;
+}
+
+export interface EffectCandidates {
+  per_section?: Record<string, unknown>;
+  per_motif?: Record<string, unknown>;
+}
+
 export interface EffectsListResponse {
   items: Effect[];
   total: number;

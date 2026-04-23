@@ -25,6 +25,9 @@ from pyromind.models.effect import (  # noqa: E402
     SemanticSearchHit,
     SemanticSearchRequest,
 )
+from pyromind.models.audio import AudioAnalysis, Section  # noqa: E402
+from pyromind.models.candidates import EffectCandidates, RankedEffect  # noqa: E402
+from pyromind.models.plan import Motif, Palette, PlanSection, ShowPlan  # noqa: E402
 from pyromind.models.project import Project, ProjectCreate, ProjectDetail  # noqa: E402
 from pyromind.models.show import (  # noqa: E402
     Show,
@@ -91,6 +94,14 @@ def _emit_models() -> str:
         EffectBase,
         EffectCreate,
         Effect,
+        Section,
+        AudioAnalysis,
+        Palette,
+        PlanSection,
+        Motif,
+        ShowPlan,
+        RankedEffect,
+        EffectCandidates,
         EffectsListResponse,
         SemanticSearchRequest,
         SemanticSearchHit,

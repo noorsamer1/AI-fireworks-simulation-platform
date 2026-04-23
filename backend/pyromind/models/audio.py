@@ -1,5 +1,7 @@
 """Audio analysis schemas."""
 
+from __future__ import annotations
+
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -38,7 +40,7 @@ class AudioAnalysis(BaseModel):
     mode: Literal["major", "minor"] = "major"
     loudness_curve: list[float] = Field(default_factory=list)
     spectral_centroid_curve: list[float] = Field(default_factory=list)
-    stems: dict[str, str] = Field(default_factory=dict)
+    stems: dict[Literal["drums", "bass", "vocals", "other"], str] = Field(default_factory=dict)
     sections: list[Section] = Field(default_factory=list)
     mood_vector: list[float] = Field(default_factory=list)
     mert_embedding: list[float] = Field(default_factory=list)
